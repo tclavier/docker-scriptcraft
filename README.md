@@ -21,4 +21,4 @@ That will download all require files and build container for you.
 
 To run it launch :
 
-    docker run -p 25565:25565 tclavier/scriptcraft
+    docker run -p 25565:25565 -it tclavier/scriptcraft
