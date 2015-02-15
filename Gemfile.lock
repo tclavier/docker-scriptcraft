@@ -1,0 +1,48 @@
+GIT
+  remote: git@github.com:Deliverous/docker-tdd.git
+  revision: 11e62611a6b2d92b37cb521dc127894495dbc3a9
+  specs:
+    docker-tdd (0.0.1)
+      docker-api
+      minitest
+
+GIT
+  remote: git@github.com:Deliverous/rake-docker.git
+  revision: dc77f205b661d9c29fcc769d4e81a5116464c472
+  specs:
+    rake-docker (0.0.1)
+      climate_control
+      rake
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (4.2.0)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
+    archive-tar-minitar (0.5.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    docker-api (1.19.0)
+      archive-tar-minitar
+      excon (>= 0.38.0)
+      json
+    excon (0.44.2)
+    i18n (0.7.0)
+    json (1.8.2)
+    minitest (5.5.1)
+    rake (10.4.2)
+    thread_safe (0.3.4)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  docker-tdd!
+  rake
+  rake-docker!
