@@ -16,7 +16,7 @@ file '.target/scriptcraft.jar' => '.target' do
   sh "wget http://scriptcraftjs.org/download/latest/scriptcraft-3.1.1/scriptcraft.jar -O .target/scriptcraft.jar"
 end
 
-Rake::DockerLib.new("tclavier/extreme-startup") do
+Rake::DockerLib.new("tclavier/scriptcraft") do
 end
 
 task test: :build
