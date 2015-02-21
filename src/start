@@ -1,0 +1,13 @@
+#!/bin/bash
+set -x
+set -e
+
+rsync -a /opt/minecraft/ /minecraft/
+cd /minecraft
+[ -n "${OPS:-}" ]         && echo "$OPS" > /minecraft/config/ops.cfg
+[ -n "${ONLINE_MODE:-}" ] && sed -i -e "s/^online-mode=.*/online-mode=$ONLINE_MODE/g" /minecraft/config/server.cfg
+
+[ -n "${WORLD_TYPE:-}" ]          && sed -i -e "s/^world-type=.*/world-type=$WORLD_TYPE/g"                            /minecraft/config/worlds/default/default_NORMAL.cfg
+[ -n "${GENERATE_STRUCTURES:-}" ] && sed -i -e "s/^generate-structures=.*/generate-structures=$GENERATE_STRUCTURES/g" /minecraft/config/worlds/default/default_NORMAL.cfg
+
+/usr/bin/java -Xmx1024M -jar canarymod.jar
