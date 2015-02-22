@@ -11,23 +11,36 @@ To run it launch :
 
 # Options
 
-Some options could be pass by environement variable : 
+Some options could be pass by environment variables :
 
 * `OPS` : Pseudo of first ops
 * `ONLINE_MODE` : true or false, option to enable account verification
 * `WORLD_TYPE` : FLAT by default
 * `GENERATE_STRUCTURES` : true or false, not used in FLAT world
 
-I have enable a volume : /minecraft, to persit world
+I have enabled a volume: /minecraft, to persist world
 
 For exemple : 
 
     docker run -p 25565:25565 -it -e OPS=FooBar -e ONLINE_MODE=false -v /tmp/minecraft:/minecraft tclavier/scriptcraft
 
+# Classroom module
+
+First ops can activate scripting in online console with 
+
+    /jsp classroom on
+
+or directly in server console by 
+
+    jsp classroom on 
+
+# Deliverous
+
+You can find a file named Deliverous. It must be update with your IP to deploy this container on [Deliverous](http://deliverous.com) plate-forme.
 
 # Build
 
-If you whant to build it, for exemple to tune default world, clone it :
+If you whant to build it, for exemple to tune your world, clone it :
 
     git clone https://github.com/tclavier/docker-scriptcraft.git
 

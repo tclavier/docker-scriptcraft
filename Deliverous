@@ -1,0 +1,16 @@
+scriptcraft:
+  image: tclavier/scriptcraft
+  ports:
+  - ip: my_ip_name
+    container_port: 25565
+    host_port: 25565
+  volumes:
+  - name: minecraft
+    path: /minecraft
+  environment:
+    OPS: FooBar
+    ONLINE_MODE: false
+    WORLD_TYPE: FLAT
+  limits:
+    memory: 2G
+
