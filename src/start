@@ -9,5 +9,9 @@ cd /minecraft
 
 [ -n "${WORLD_TYPE:-}" ]          && sed -i -e "s/^world-type=.*/world-type=$WORLD_TYPE/g"                            /minecraft/config/worlds/default/default_NORMAL.cfg
 [ -n "${GENERATE_STRUCTURES:-}" ] && sed -i -e "s/^generate-structures=.*/generate-structures=$GENERATE_STRUCTURES/g" /minecraft/config/worlds/default/default_NORMAL.cfg
+[ -n "${SPAWN_VILLAGERS:-}" ]     && sed -i -e "s/^spawn-villagers=.*/spawn-villagers=$SPAWN_VILLAGERS/g"             /minecraft/config/worlds/default/default_NORMAL.cfg
+[ -n "${SPAWN_GOLEMS:-}" ]        && sed -i -e "s/^spawn-golems=.*/spawn-golems=$SPAWN_GOLEMS/g"                      /minecraft/config/worlds/default/default_NORMAL.cfg
+[ -n "${SPAWN_ANIMALS:-}" ]       && sed -i -e "s/^spawn-animals=.*/spawn-animals=$SPAWN_ANIMALS/g"                   /minecraft/config/worlds/default/default_NORMAL.cfg
+[ -n "${SPAWN_MONSTERS:-}" ]      && sed -i -e "s/^spawn-monsters=.*/spawn-monsters=$SPAWN_MONSTERS/g"                /minecraft/config/worlds/default/default_NORMAL.cfg
 
 /usr/bin/java -Xmx1024M -jar canarymod.jar
