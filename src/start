@@ -2,10 +2,14 @@
 set -x
 set -e
 
-rsync -a /opt/minecraft/ /minecraft/
+RSYNC_OPT=""
+[ -n "${INIT_WORLD:-}" ] && RSYNC_OPT=" --delete "
+
+rsync -a $RSYNC_OPT /opt/minecraft/ /minecraft/
 cd /minecraft
 [ -n "${OPS:-}" ]         && echo "$OPS" > /minecraft/config/ops.cfg
 [ -n "${ONLINE_MODE:-}" ] && sed -i -e "s/^online-mode=.*/online-mode=$ONLINE_MODE/g" /minecraft/config/server.cfg
+[ -n "${DEFAULT_WORLD_SIZE:-}" ] && sed -i -e "s/^default-world-size=.*/default-world-size=$DEFAULT_WORLD_SIZE/g" /minecraft/config/server.cfg
 
 [ -n "${WORLD_TYPE:-}" ]          && sed -i -e "s/^world-type=.*/world-type=$WORLD_TYPE/g"                            /minecraft/config/worlds/default/default_NORMAL.cfg
 [ -n "${GENERATE_STRUCTURES:-}" ] && sed -i -e "s/^generate-structures=.*/generate-structures=$GENERATE_STRUCTURES/g" /minecraft/config/worlds/default/default_NORMAL.cfg
@@ -14,4 +18,5 @@ cd /minecraft
 [ -n "${SPAWN_ANIMALS:-}" ]       && sed -i -e "s/^spawn-animals=.*/spawn-animals=$SPAWN_ANIMALS/g"                   /minecraft/config/worlds/default/default_NORMAL.cfg
 [ -n "${SPAWN_MONSTERS:-}" ]      && sed -i -e "s/^spawn-monsters=.*/spawn-monsters=$SPAWN_MONSTERS/g"                /minecraft/config/worlds/default/default_NORMAL.cfg
 
-/usr/bin/java -Xmx1024M -jar canarymod.jar
+/etc/init.d/ssh start
+/usr/bin/java -Xmx2048M -jar canarymod.jar
