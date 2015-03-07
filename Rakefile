@@ -10,7 +10,7 @@ end
 
 file '.target/scriptcraft.jar' => '.target' do 
   # http://scriptcraftjs.org/download/latest 
-  sh "wget http://scriptcraftjs.org/download/latest/scriptcraft-3.1.2/scriptcraft.jar -O .target/scriptcraft.jar"
+  sh "wget http://scriptcraftjs.org/download/latest/scriptcraft-3.1.3/scriptcraft.jar -O .target/scriptcraft.jar"
 end
 
 Rake::DockerLib.new("tclavier/scriptcraft") do
