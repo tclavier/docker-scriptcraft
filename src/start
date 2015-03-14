@@ -19,4 +19,4 @@ cd /minecraft
 [ -n "${SPAWN_MONSTERS:-}" ]      && sed -i -e "s/^spawn-monsters=.*/spawn-monsters=$SPAWN_MONSTERS/g"                /minecraft/config/worlds/default/default_NORMAL.cfg
 
 /etc/init.d/ssh start
-/usr/bin/java -Xmx2048M -jar canarymod.jar
+/usr/bin/java -Xmx4096M -jar canarymod.jar

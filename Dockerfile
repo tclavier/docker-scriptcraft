@@ -1,7 +1,11 @@
 from deliverous/jessie
 env DEBIAN_FRONTEND noninteractive
+run sed -i -e 's/jessie/sid/g' /etc/apt/sources.list
 run apt-get update && \
-    apt-get install -y openjdk-7-jre rsync ssh && \
+    apt-get dist-upgrade -y && \
+    apt-get clean
+run apt-get update && \
+    apt-get install -y openjdk-8-jre rsync ssh && \
     apt-get clean
 # minecraft
 add canarymod.jar /opt/minecraft/
