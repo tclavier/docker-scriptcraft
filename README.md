@@ -54,7 +54,7 @@ If you whant to build it, for exemple to tune your world, clone it :
 
 ## Install ruby environement
 
-With brew :
+With brew on mac :
 
     brew install rbenv-bundler ruby-build wget
     rbenv install 2.0.0-p481
