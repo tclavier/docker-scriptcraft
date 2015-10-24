@@ -1,6 +1,7 @@
 from deliverous/jessie
 env DEBIAN_FRONTEND noninteractive
 run sed -i -e 's/jessie/sid/g' /etc/apt/sources.list
+# run sed -i -e 's/jessie/sid/g' -e 's/ftp.us.debian.org/ftp.debian.nl/g' /etc/apt/sources.list
 run apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get clean
@@ -9,6 +10,7 @@ run apt-get update && \
     apt-get clean
 # minecraft
 add canarymod.jar /opt/minecraft/
+add sc-mqtt.jar /opt/minecraft/
 add scriptcraft.jar /opt/minecraft/plugins/
 
 run echo "eula=true" > /opt/minecraft/eula.txt

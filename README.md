@@ -52,13 +52,21 @@ If you whant to build it, for exemple to tune your world, clone it :
 
     git clone https://github.com/tclavier/docker-scriptcraft.git
 
+Install ruby environment
+
+    brew install rbenv-bundler ruby-build wget
+    rbenv install 2.0.0-p481
+    rbenv local 2.0.0-p481
+
 Install dependencies
 
     cd docker-scriptcraft
     bundle install
+    
+Make sure you can run `docker`
 
 And build
 
-    rake build
+    bundle exec rake build
 
 That will download all require files and build container tclavier/scriptcraft for you. 
