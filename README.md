@@ -60,7 +60,7 @@ Install ruby environment
 
 Install dependencies
 
-    cd docker-scriptcraft    
+    cd docker-scriptcraft
     bundle install
     
 Make sure you can run `docker`
