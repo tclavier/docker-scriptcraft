@@ -12,12 +12,12 @@ end
 
 file '.target/scriptcraft.jar' => '.target' do 
   # http://scriptcraftjs.org/download/latest 
-  sh "wget --no-check-certificate http://scriptcraftjs.org/download/latest/scriptcraft-3.1.10/scriptcraft.jar -O .target/scriptcraft.jar"
+  sh "wget http://scriptcraftjs.org/download/latest/scriptcraft-3.1.10/scriptcraft.jar -O .target/scriptcraft.jar"
 end
 
 file '.target/sc-mqtt.jar' => '.target' do
   # http://scriptcraftjs.org/download/extras
-  sh "wget --no-check-certificate http://scriptcraftjs.org/download/extras/mqtt/sc-mqtt.jar -O .target/sc-mqtt.jar"
+  sh "wget http://scriptcraftjs.org/download/extras/mqtt/sc-mqtt.jar -O .target/sc-mqtt.jar"
 end
 
 Rake::DockerLib.new("tclavier/scriptcraft") do
