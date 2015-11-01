@@ -1,4 +1,4 @@
-from deliverous/jessie
+from debian
 env DEBIAN_FRONTEND noninteractive
 run sed -i -e 's/jessie/sid/g' /etc/apt/sources.list
 # run sed -i -e 's/jessie/sid/g' -e 's/ftp.us.debian.org/ftp.debian.nl/g' /etc/apt/sources.list
