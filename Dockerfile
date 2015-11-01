@@ -1,7 +1,5 @@
 from debian:sid
 env DEBIAN_FRONTEND noninteractive
-#run sed -i -e 's/jessie/sid/g' /etc/apt/sources.list
-# run sed -i -e 's/jessie/sid/g' -e 's/ftp.us.debian.org/ftp.debian.nl/g' /etc/apt/sources.list
 run apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get clean
@@ -19,7 +17,6 @@ add default_NORMAL.cfg /opt/minecraft/config/worlds/default/default_NORMAL.cfg
 
 # a default ssh access to upload js 
 add sshd_config /etc/ssh/sshd_config
-run rm /etc/nologin
 run mkdir -p /opt/minecraft/scriptcraft/players/
 run echo "root:minecraft" | chpasswd
 
