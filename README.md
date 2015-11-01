@@ -4,18 +4,24 @@ It's a [Docker](http://www.docker.com) container for [minecraft]() with
 [CanaryMod](http://canarymod.net/) and [ScriptCraft](http://scriptcraftjs.org/)
 installed and ready to run.
 
+ScriptCraft is a Minecraft Mod that lets you extend Minecraft using the Javascript Programming Language. ScriptCraft makes modding Minecraft easier. It includes a logo-like "Drone" object that can be used to build complex buildings, roads, villages, even entire cities. It also includes many other features that make modding Minecraft easier.
+
 # Run
 
 To run it launch :
 
     docker run -p 25565:25565 -p 22:22 -it tclavier/scriptcraft
 
+# Play
+
+To test connect your minecraft client to `minecraft.tcweb.org` and read https://github.com/walterhiggins/ScriptCraft/blob/master/docs/API-Reference.md
+
 # Options
 
 Some options could be pass by environment variables :
 
-* `INIT_WORLD` : if this variable is set, all worlds will be removed at startup
 * `OPS` : Pseudo of first ops
+* `INIT_WORLD` : if this variable is set, all worlds will be removed at startup
 * `ONLINE_MODE` : true or false, option to enable account verification
 * `WORLD_TYPE` : FLAT by default
 * `GENERATE_STRUCTURES` : true or false, not used in FLAT world
@@ -52,28 +58,9 @@ If you whant to build it, for exemple to tune your world, clone it :
 
     git clone https://github.com/tclavier/docker-scriptcraft.git
 
-## Install ruby environement
+Make sure you can run `docker` and build
 
-With brew on mac :
-
-    brew install rbenv-bundler ruby-build wget
-    rbenv install 2.0.0-p481
-    rbenv local 2.0.0-p481
-
-On debian : 
-
-    apt-get install ruby bundler
-    
-## Install dependencies
-
-    cd docker-scriptcraft
-    bundle install
-    
-Make sure you can run `docker`
-
-## And build
-
-    bundle exec rake build
+    docker build -t tclavier/scriptcraft .
 
 That will download all require files and build container tclavier/scriptcraft for you. 
 

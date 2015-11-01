@@ -9,9 +9,9 @@ run apt-get update && \
     apt-get install -y openjdk-8-jre rsync ssh && \
     apt-get clean
 # minecraft
-add canarymod.jar /opt/minecraft/
-add sc-mqtt.jar /opt/minecraft/
-add scriptcraft.jar /opt/minecraft/plugins/
+add http://scriptcraftjs.org/download/latest/CanaryMod-1.8.0-1.2.1-SNAPSHOT-shaded.jar /opt/minecraft/canarymod.jar
+add http://scriptcraftjs.org/download/extras/mqtt/sc-mqtt.jar /opt/minecraft/sc-mqtt.jar
+add http://scriptcraftjs.org/download/latest/scriptcraft-3.1.10/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
 
 run echo "eula=true" > /opt/minecraft/eula.txt
 add server.cfg /opt/minecraft/config/server.cfg
