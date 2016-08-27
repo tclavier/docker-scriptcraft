@@ -9,7 +9,7 @@ run apt-get update && \
 # minecraft
 add http://scriptcraftjs.org/download/latest/CanaryMod-1.8.0-1.2.1-SNAPSHOT-shaded.jar /opt/minecraft/canarymod.jar
 add http://scriptcraftjs.org/download/extras/mqtt/sc-mqtt.jar /opt/minecraft/sc-mqtt.jar
-add http://scriptcraftjs.org/download/latest/scriptcraft-3.1.10/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
+add http://scriptcraftjs.org/download/latest/scriptcraft-3.2.0/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
 
 run echo "eula=true" > /opt/minecraft/eula.txt
 add server.cfg /opt/minecraft/config/server.cfg
