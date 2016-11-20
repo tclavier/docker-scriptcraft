@@ -20,4 +20,4 @@ cd /minecraft
 
 /etc/init.d/ssh start
 #/usr/bin/java -Xmx4096M -jar canarymod.jar
-/usr/bin/java -Xmx4096M -cp sc-mqtt.jar:canarymod.jar net.canarymod.Main
+/usr/bin/java -Xmx8192M -jar spigot-1.11.jar

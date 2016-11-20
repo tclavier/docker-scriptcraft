@@ -1,19 +1,23 @@
 from debian:sid
 env DEBIAN_FRONTEND noninteractive
+run sed -e 's/deb.debian.org/debian.mirrors.ovh.net/g' -i /etc/apt/sources.list
 run apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get clean
 run apt-get update && \
-    apt-get install -y openjdk-8-jre rsync ssh && \
+    apt-get install -y openjdk-8-jre rsync ssh git && \
     apt-get clean
-# minecraft
-add http://scriptcraftjs.org/download/latest/CanaryMod-1.8.0-1.2.1-SNAPSHOT-shaded.jar /opt/minecraft/canarymod.jar
-add http://scriptcraftjs.org/download/extras/mqtt/sc-mqtt.jar /opt/minecraft/sc-mqtt.jar
+# Spigot (Minecraft server)
+add https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar /opt/minecraft/BuildTools.jar
+workdir /opt/minecraft/
+run java -jar BuildTools.jar --rev 1.11 .
+
 add http://scriptcraftjs.org/download/latest/scriptcraft-3.2.0/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
 
 run echo "eula=true" > /opt/minecraft/eula.txt
 add server.cfg /opt/minecraft/config/server.cfg
 add default_NORMAL.cfg /opt/minecraft/config/worlds/default/default_NORMAL.cfg
+add config.yml /opt/minecraft/plugins/scriptcraft/config.yml
 
 # a default ssh access to upload js 
 add sshd_config /etc/ssh/sshd_config

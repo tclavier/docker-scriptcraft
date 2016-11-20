@@ -1,7 +1,7 @@
 # docker-scriptcraft
 
 It's a [Docker](http://www.docker.com) container for [minecraft]() with
-[CanaryMod](http://canarymod.net/) and [ScriptCraft](http://scriptcraftjs.org/)
+[SigotMC](https://www.spigotmc.org/) and [ScriptCraft](http://scriptcraftjs.org/)
 installed and ready to run.
 
 ScriptCraft is a Minecraft Mod that lets you extend Minecraft using the Javascript Programming Language. ScriptCraft makes modding Minecraft easier. It includes a logo-like "Drone" object that can be used to build complex buildings, roads, villages, even entire cities. It also includes many other features that make modding Minecraft easier.
