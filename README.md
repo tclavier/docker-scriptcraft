@@ -23,8 +23,6 @@ Some options could be pass by environment variables :
 * `OPS` : Pseudo of first ops
 * `INIT_WORLD` : if this variable is set, all worlds will be removed at startup
 * `ONLINE_MODE` : true or false, option to enable account verification
-* `WORLD_TYPE` : FLAT by default
-* `GENERATE_STRUCTURES` : true or false, not used in FLAT world
 
 I have enabled a volume: /minecraft, to persist world
 
@@ -34,14 +32,9 @@ For exemple :
 
 # Classroom plugin
 
-First ops can activate scripting in online console with 
+Classroom plugin is enable at startup, you can directly use `/js` at prompt.
 
-    /jsp classroom on
-
-or directly in server console by 
-
-    jsp classroom on 
-
+## Upload scripts
 The ssh port is available to upload scripts in players directories only in
 sftp, the default credentials are : login `root` and password `minecraft`.
 Details about this functionality are available on [classroom-plugin

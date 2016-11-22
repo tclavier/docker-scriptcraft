@@ -15,9 +15,8 @@ run java -jar BuildTools.jar --rev 1.11 .
 add http://scriptcraftjs.org/download/latest/scriptcraft-3.2.0/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
 
 run echo "eula=true" > /opt/minecraft/eula.txt
-add server.cfg /opt/minecraft/config/server.cfg
-add default_NORMAL.cfg /opt/minecraft/config/worlds/default/default_NORMAL.cfg
-add config.yml /opt/minecraft/plugins/scriptcraft/config.yml
+add server.properties /opt/minecraft/server.properties
+#add config.yml /opt/minecraft/plugins/scriptcraft/config.yml
 
 # a default ssh access to upload js 
 add sshd_config /etc/ssh/sshd_config
