@@ -10,7 +10,6 @@ scriptcraft:
   environment:
     OPS: FooBar
     ONLINE_MODE: false
-    WORLD_TYPE: FLAT
   limits:
     memory: 2G
 
