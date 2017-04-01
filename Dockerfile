@@ -10,9 +10,9 @@ run apt-get update && \
 # Spigot (Minecraft server)
 add https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar /opt/minecraft/BuildTools.jar
 workdir /opt/minecraft/
-run java -jar BuildTools.jar --rev 1.11 .
+run java -jar BuildTools.jar --rev 1.11.2 .
 
-add http://scriptcraftjs.org/download/latest/scriptcraft-3.2.0/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
+add http://scriptcraftjs.org/download/latest/scriptcraft-3.2.1/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
 
 run echo "eula=true" > /opt/minecraft/eula.txt
 add server.properties /opt/minecraft/server.properties
