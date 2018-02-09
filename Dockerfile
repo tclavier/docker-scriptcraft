@@ -1,5 +1,6 @@
 from debian:sid
 env DEBIAN_FRONTEND noninteractive
+env MINECRAFT_VERSION=1.12.2
 run sed -e 's/deb.debian.org/debian.mirrors.ovh.net/g' -i /etc/apt/sources.list
 run apt-get update && \
     apt-get dist-upgrade -y && \
@@ -10,7 +11,7 @@ run apt-get update && \
 # Spigot (Minecraft server)
 add https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar /opt/minecraft/BuildTools.jar
 workdir /opt/minecraft/
-run java -jar BuildTools.jar --rev 1.12.2 .
+run java -jar BuildTools.jar --rev $MINECRAFT_VERSION .
 
 add http://scriptcraftjs.org/download/latest/scriptcraft-3.2.1/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
 
