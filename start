@@ -2,7 +2,7 @@
 set -x
 set -e
 
-RSYNC_OPT=""
+RSYNC_OPT=" --update "
 [ -n "${INIT_WORLD:-}" ] && RSYNC_OPT=" --delete "
 
 rsync -a $RSYNC_OPT /opt/minecraft/ /minecraft/
