@@ -11,7 +11,7 @@ run apt-get update && \
 add https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar /opt/minecraft/BuildTools.jar
 workdir /opt/minecraft/
 
-env MINECRAFT_VERSION=1.12.2
+env MINECRAFT_VERSION=1.13.1
 run java -jar BuildTools.jar --rev $MINECRAFT_VERSION .
 
 add http://scriptcraftjs.org/download/latest/scriptcraft-3.2.1/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
