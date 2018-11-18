@@ -14,7 +14,7 @@ workdir /opt/minecraft/
 env MINECRAFT_VERSION=1.12.2
 run java -jar BuildTools.jar --rev $MINECRAFT_VERSION .
 
-add http://scriptcraftjs.org/download/latest/scriptcraft-3.2.1/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
+add https://github.com/walterhiggins/ScriptCraft/releases/download/3.3.0/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
 
 run echo "eula=true" > /opt/minecraft/eula.txt
 add server.properties /opt/minecraft/server.properties
