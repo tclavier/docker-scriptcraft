@@ -1,20 +1,20 @@
 from debian:sid
 env DEBIAN_FRONTEND noninteractive
-run sed -e 's/deb.debian.org/debian.mirrors.ovh.net/g' -i /etc/apt/sources.list
 run apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get clean
 run apt-get update && \
-    apt-get install -y openjdk-8-jdk rsync ssh git && \
+    apt-get install -y openjdk-11-jdk rsync ssh git && \
     apt-get clean
 # Spigot (Minecraft server)
 add https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar /opt/minecraft/BuildTools.jar
 workdir /opt/minecraft/
 
-env MINECRAFT_VERSION=1.12.2
+env MINECRAFT_VERSION=1.13.2
 run java -jar BuildTools.jar --rev $MINECRAFT_VERSION .
 
-add https://github.com/walterhiggins/ScriptCraft/releases/download/3.3.0/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
+env SCRIPTCRAFT_VERSION=3.4.0
+add https://github.com/walterhiggins/ScriptCraft/releases/download/$SCRIPTCRAFT_VERSION/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
 
 run echo "eula=true" > /opt/minecraft/eula.txt
 add server.properties /opt/minecraft/server.properties

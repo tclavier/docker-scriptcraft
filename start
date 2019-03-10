@@ -11,4 +11,4 @@ cd /minecraft
 [ -n "${ONLINE_MODE:-}" ] && sed -i -e "s/^online-mode=.*/online-mode=$ONLINE_MODE/g" /minecraft/server.properties
 
 /etc/init.d/ssh start
-echo "jsp classroom on" | /usr/bin/java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Xmx8192M -jar spigot-${MINECRAFT_VERSION}.jar
+echo "jsp classroom on" | /usr/bin/java -Xmx8192M -jar spigot-${MINECRAFT_VERSION}.jar
