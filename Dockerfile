@@ -10,7 +10,7 @@ run apt-get update && \
 add https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar /opt/minecraft/BuildTools.jar
 workdir /opt/minecraft/
 
-env MINECRAFT_VERSION=1.13.2
+env MINECRAFT_VERSION=1.14.4
 run java -jar BuildTools.jar --rev $MINECRAFT_VERSION .
 
 env SCRIPTCRAFT_VERSION=3.4.0
