@@ -1,4 +1,4 @@
-from debian:sid
+from debian
 env DEBIAN_FRONTEND noninteractive
 run apt-get update && \
     apt-get dist-upgrade -y && \
@@ -11,7 +11,7 @@ add https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact
 workdir /opt/minecraft/
 
 env MINECRAFT_VERSION=1.14.4
-run java -jar BuildTools.jar --rev $MINECRAFT_VERSION --compile craftbukkit .
+run java -jar BuildTools.jar --rev $MINECRAFT_VERSION --compile craftbukkit
 
 env SCRIPTCRAFT_VERSION=3.4.0
 add https://github.com/walterhiggins/ScriptCraft/releases/download/$SCRIPTCRAFT_VERSION/scriptcraft.jar /opt/minecraft/plugins/scriptcraft.jar
