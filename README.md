@@ -28,7 +28,7 @@ I have enabled a volume: /minecraft, to persist world
 
 For exemple : 
 
-    docker run -p 25565:25565 -it -e OPS=FooBar -e ONLINE_MODE=false -v /tmp/minecraft:/minecraft tclavier/scriptcraft
+    docker run -p 25565:25565 -it -e OPS=FooBar -e ONLINE_MODE=false -v minecraft:/minecraft tclavier/scriptcraft
 
 # Classroom plugin
 
