@@ -1,16 +1,16 @@
-from debian
+from debian:sid
 env DEBIAN_FRONTEND noninteractive
 run apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get clean
 run apt-get update && \
-    apt-get install -y openjdk-11-jdk rsync ssh git && \
+    apt-get install -y openjdk-17-jdk rsync ssh git && \
     apt-get clean
 # Spigot (Minecraft server)
 add https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar /opt/minecraft/BuildTools.jar
 workdir /opt/minecraft/
 
-env MINECRAFT_VERSION=1.14.4
+env MINECRAFT_VERSION=1.17
 run java -jar BuildTools.jar --rev $MINECRAFT_VERSION --compile craftbukkit
 
 env SCRIPTCRAFT_VERSION=3.4.0
